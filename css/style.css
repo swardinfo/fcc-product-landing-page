@@ -1,0 +1,285 @@
+/* #region global */
+
+/* Normalize styles */
+* {
+    box-sizing:border-box;
+    float:none;
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-weight:normal;
+    line-height: 150%;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 280px;
+}
+
+body {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #eee9e2;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* project requirement - navbar should always be at the top of the viewport, utilize CSS flexbox at least once */
+ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* #endregion global */
+
+/* #region header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 10px 5px 0 5px;
+    z-index: 99;
+    border-bottom: 1px solid #ddd;
+}
+
+#header-img {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* #endregion header */
+
+/* #region main */
+
+/* wrapper */
+body > div {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 80px;
+    color: #000;
+    overflow-x: hidden;
+}
+
+main{
+    width: 100%;
+    max-width: 440px;
+    padding: 15px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    font-size: 18px;
+}
+
+/* #region form */
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 40px auto;
+}
+
+#email {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 35px;
+    padding: 5px;
+}
+
+#submit, button {
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #32CD32;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* #endregion form */
+
+/* #region features */
+
+#features {
+    margin-bottom: 40px;
+}
+
+#features > div {
+    margin: 0 auto 30px auto;
+    text-align: justify;
+}
+
+#features .icon {
+    width: 0;
+    height: 0;
+}
+
+#features h2 {
+    margin-bottom: 6px;
+}
+
+/* #endregion features */
+
+/* #region factory */
+
+#video {
+    display: block;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    background-color: #000;
+}
+
+#factory span {
+    display: inline-block;
+    margin: 0 auto 60px auto;
+}
+
+#factory a {
+    color: #0645AD;
+    outline: none;
+}
+
+#factory a:hover {
+    text-decoration: underline;
+}
+
+#factory a:focus {
+    box-shadow:0 3px 1px -1px #696969;
+}
+
+/* #endregion factory */
+
+/* #region pricing */
+
+#pricing section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    border: 1px solid #ccc;
+}
+
+#pricing section > * {
+    margin-bottom: 18px;
+}
+
+#pricing h3 {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(65, 42, 42);
+    color: #fff;
+    text-align: center;
+}
+
+#pricing .description {
+    width: 95%;
+    text-align: justify;
+}
+
+/* #endregion pricing */
+
+/* #endregion main */
+
+/* #region footer */
+
+footer {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: center;
+    padding: 6px;
+}
+
+small {
+    display: block;
+    font-size: 14px;
+}
+
+/* #endregion footer */
+
+/* #region media queries */
+
+/* project requirement - at least one media query */
+@media only screen and (min-width: 800px) {
+
+    main {
+        max-width: 900px;
+        min-height: 100%;
+    }
+
+    #features > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 0 60px 0;
+    }
+
+    #features .icon {
+        flex: auto;
+        max-width: 50px;
+        height: 100%;
+        fill: orange;
+    }
+
+    #features .description {
+        flex-basis: 80%;
+    }
+
+    video {
+        width: 100%;
+        margin: 80px auto;
+    }
+
+    #pricing {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        align-items: center;
+    }
+
+    .product {
+        width: auto;
+        margin: 0;
+    }
+}
+
+/* #endregion media queries */
